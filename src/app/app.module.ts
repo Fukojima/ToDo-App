@@ -11,6 +11,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
+import { ListComponent } from './components/views/list-tarefas/list.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import { NavComponent } from './components/template/nav/nav.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +30,10 @@ import { NavComponent } from './components/template/nav/nav.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule ,
-     MatCardModule,
-     MatListModule
-     
+    MatCardModule,
+    MatListModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
