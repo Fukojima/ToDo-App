@@ -1,0 +1,38 @@
+<div class="container-fluid" style="width: 65%;">
+  <div class="no-data text-center" *ngIf="Tarefas.length == 0" >
+    <p>Ainda não há registros armazenados na base de dados.</p>
+  </div>
+
+  <div *ngIf="Tarefas.length !== 0">
+    <h4 class="mb-3 text-center" >Listagem de Tarefas</h4>
+    <div class="col-sm-12 justify-content-md-center align-items-center" >
+      <table class="table table-responsive table-striped table-hover table-sm" >
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Responsavel</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tarefa of Tarefas">
+            <td>{{tarefa.id}}</td>
+            <td>{{tarefa.titulo}}</td>
+            <td>{{tarefa.descricao}}</td>
+            <td>{{tarefa.responsavel}}</td>
+            <td>{{tarefa.telefone}}</td>
+            <td>{{tarefa.email}}</td>
+            <td>
+              <span class="edit" routerLink="/tarefa-edit/{{tarefa.id}}" >Editar</span>
+              <span class="delete" (click) = "deleteTarefa(tarefa.id)" >Deletar</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
