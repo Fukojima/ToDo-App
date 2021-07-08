@@ -16,7 +16,7 @@ import { HomeComponent } from './components/views/home/home.component';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { CardHomeComponent } from './components/views/card-home/card-home.component';
+//import { CardHomeComponent } from './components/views/card-home/card-home.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import { CardHomeComponent } from './components/views/card-home/card-home.compon
     FooterComponent,
     NavComponent,
     ListComponent,
-    HomeComponent,
-    CardHomeComponent
+    HomeComponent
+    //CardHomeComponent
   ],
   imports: [
     BrowserModule,
