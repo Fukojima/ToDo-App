@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { RestApiService } from './../../../shared/rest-api.service';
 import { Todo } from '../../../model/todo';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule , FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -9,27 +11,28 @@ import { Todo } from '../../../model/todo';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-
+  
+  public todoId!: string;
   public todoDetail = <Todo>{};
-  constructor( public restApi:RestApiService, public router:Router ) { }
+  public mode!: string;    
+
+
+  constructor( public restApi:RestApiService, public router:Router, private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit() {
-   
+
   }
+  
+  submit() {
+    this.restApi.createTarefa(this.todoDetail).subscribe((data:
+    {}) => {
+    //this.router.navigate(['/employees-list'])
+    })
+    }
   
 
-  
-  submit(form : any) {
-    console.log(form);
-    if(form.valid) {
-        this.restApi.createTarefa(this.todoDetail);
-        this.router.navigate(['/list']);
-    } else {
-    
-    }
-  }
   onClickCancel() {
-    this.router.navigate(['/todo-list']);
+    this.router.navigate(['/']);
   }
 
 }

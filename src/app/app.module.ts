@@ -13,6 +13,12 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { ListComponent } from './components/views/list-tarefas/list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './components/views/create/create.component';
+
+
+// Forms module
+import { FormsModule } from '@angular/forms';
+import { EditComponent } from './components/views/edit/edit.component';
 
 
 
@@ -22,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    ListComponent
+    ListComponent,
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule ,
     MatCardModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

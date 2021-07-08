@@ -1,24 +1,24 @@
     
-    <div class="col-sm-12 pt-5">
+    <div class="col-sm-12 pt-5 container-fluid">
         <div class="col-md-12">
-            <form id="todoForm" #todoForm="ngForm"  (ngSubmit)="submit(todoForm);" novalidat>
+            <form id="todoForm" #todoForm="ngForm"  (ngSubmit)="submit();" novalidat>
                 <fieldset class="scheduler-border">
                     <legend class="scheduler-border">Adicionar Tarefa</legend>    
                     <div class="form-group row">
-                        <label for="firstName" class="col-md-2 col-form-label">Titulo</label>
+                        <label for="titulo" class="col-md-2 col-form-label">Titulo</label>
                         <div class="col-md-5">
-                            <input type="text" class="form-control" #firstName="ngModel" name="firstName" [(ngModel)]="todoDetail.titulo" placeholder="Primeiro Nome" required>
-                            <div [hidden]="firstName.valid || (firstName.pristine && !todoForm.submitted)" class="text-danger">
-                              Primeiro Nome é necessario.
+                            <input type="text" class="form-control" #titulo="ngModel" name="titulo" [(ngModel)]="todoDetail.titulo" placeholder="Primeiro Nome" required>
+                            <div [hidden]="titulo.valid || (titulo.pristine && !todoForm.submitted)" class="text-danger">
+                              Titulo é necessario.
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="middleName" class="col-md-2 col-form-label">Descrição</label>
+                        <label for="descricao" class="col-md-2 col-form-label">Descrição</label>
                         <div class="col-md-5">
-                            <input type="text" class="form-control" #middleName="ngModel" name="middleName" [(ngModel)]="todoDetail.descricao" placeholder="Nome do meio" required>
-                            <div [hidden]="middleName.valid || (middleName.pristine && !todoForm.submitted)" class="text-danger">
-                              Nome do meio é necessario.
+                            <input type="text" class="form-control" #descricao="ngModel" name="descricao" [(ngModel)]="todoDetail.descricao" placeholder="Descrição da tarefa" required>
+                            <div [hidden]="descricao.valid || (descricao.pristine && !todoForm.submitted)" class="text-danger">
+                              A descrição é nescessária.
                             </div>
                         </div>
                     </div>
@@ -28,8 +28,8 @@
                         <div class="col-md-5">
                             <input type="email" class="form-control" #email="ngModel" name="email" [(ngModel)]="todoDetail.email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                             <div *ngIf="email.invalid && (email.dirty || email.touched || todoForm.submitted)" class="text-danger">
-                                <div *ngIf="email.errors.required"> Email é necessario. </div>
-                                <div *ngIf="email.errors.pattern"> O endereço de e-mail que você inseriu é invalido. Por favor, tente novamente.</div>
+                               <div *ngIf="email.errors?.required"> Email é necessario. </div>
+                                <div *ngIf="email.errors?.pattern"> O endereço de e-mail que você inseriu é invalido. Por favor, tente novamente.</div> 
                             </div>
                         </div>
                     </div>
@@ -44,11 +44,11 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="phone" class="col-md-2 col-form-label">Responsável</label>
+                        <label for="responsavel" class="col-md-2 col-form-label">Responsável</label>
                         <div class="col-md-5">
-                            <input type="text" class="form-control" #task="ngModel" name="task" [(ngModel)]="todoDetail.responsavel" placeholder="Descreva a tarefa" required>
-                            <div [hidden]="task.valid || (task.pristine && !todoForm.submitted)" class="text-danger">
-                              Descrição da tarefa é necesária.
+                            <input type="text" class="form-control" #responsavel="ngModel" name="responsavel" [(ngModel)]="todoDetail.responsavel" placeholder="Descreva a tarefa" required>
+                            <div [hidden]="responsavel.valid || (responsavel.pristine && !todoForm.submitted)" class="text-danger">
+                              O responsável pela tarefa é nescessário.
                             </div>
                         </div>
                     </div>
