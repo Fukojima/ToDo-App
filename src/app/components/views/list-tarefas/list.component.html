@@ -26,8 +26,9 @@
             <td>{{tarefa.telefone}}</td>
             <td>{{tarefa.email}}</td>
             <td>
-              <span class="edit" routerLinkActive="active"  routerLink="/edit/{{tarefa.id}}" >Editar</span>
-              <span class="delete" (click) = "deleteTarefa(tarefa.id)" >Deletar</span>
+               <i class="bi bi-journal-text" routerLinkActive="active"  routerLink="/edit/{{tarefa.id}}"></i>
+               <i class="bi bi-trash" (click) = "deleteTarefa(tarefa.id)"></i>
+             
             </td>
           </tr>
         </tbody>
