@@ -12,6 +12,12 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { ListComponent } from './components/views/list-tarefas/list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './components/views/create/create.component';
+
+// Forms module
+import { FormsModule } from '@angular/forms';
+import { EditComponent } from './components/views/edit/edit.component';
+
 import { HomeComponent } from './components/views/home/home.component';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatButtonModule} from '@angular/material/button';
@@ -25,6 +31,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     FooterComponent,
     NavComponent,
     ListComponent,
+    CreateComponent,
+    EditComponent,
     HomeComponent
     //CardHomeComponent
   ],
@@ -36,6 +44,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatSidenavModule ,
     MatCardModule,
     MatListModule,
+    HttpClientModule,
+    FormsModule,
     MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,

@@ -1,4 +1,4 @@
-<div class="container-fluid" style="width: 65%;">
+<div class="container-fluid" >
   <div class="no-data text-center" *ngIf="Tarefas.length == 0" >
     <p>Ainda não há registros armazenados na base de dados.</p>
   </div>
@@ -26,7 +26,7 @@
             <td>{{tarefa.telefone}}</td>
             <td>{{tarefa.email}}</td>
             <td>
-              <span class="edit" routerLink="/tarefa-edit/{{tarefa.id}}" >Editar</span>
+              <span class="edit" routerLinkActive="active"  routerLink="/edit/{{tarefa.id}}" >Editar</span>
               <span class="delete" (click) = "deleteTarefa(tarefa.id)" >Deletar</span>
             </td>
           </tr>
