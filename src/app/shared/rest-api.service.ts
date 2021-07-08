@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { Todo } from '../model/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,8 @@ export class RestApiService {
         catchError(this.handleError))
   }
 
+
+
   getTarefa(id:number):Observable<Tarefa>{
     return this.http.get<Tarefa>(this.apiURL + '/tarefas/' +id)
       .pipe(
@@ -33,11 +36,15 @@ export class RestApiService {
   }
 
   createTarefa(tarefa:any): Observable<Tarefa>{
+
     return this.http.post<Tarefa>(this.apiURL +'/tarefas', JSON.stringify(tarefa), this.httpHeaders)
+  
       .pipe(
         retry(1),
         catchError(this.handleError)
+        
       )
+
   }
 
   updateTarefa(id:number, tarefa:Tarefa): Observable<Tarefa>{
