@@ -58,13 +58,15 @@ export class RestApiService {
 
   // Error handling (Manipulador de erro)
   handleError(error:any) {
-    let errorMessage = 'Um erro foi detectado conforme informações a seguir:\n';
+    let errorMessage = 'Um erro foi detectado conforme informações a seguir:\n'
+    +'Por favor, verifique sua conexão com banco de dados!\n';
+
     if(error.error instanceof ErrorEvent) {
       // Get client-side error
-      errorMessage = error.error.message;
+      errorMessage += error.error.message;
     } else {
        // Get server-side error (manipulador de erro do servidor)
-       errorMessage = `Codigo do erro: ${error.status}\nMensagem: ${error.message}`;
+       errorMessage += `Codigo do erro: ${error.status}\nMensagem: ${error.message}`;
     }
 
     window.alert(errorMessage);
